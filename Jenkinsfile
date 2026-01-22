@@ -9,10 +9,8 @@ pipeline {
     stage('Addition')
     {
       steps {
-      sh '''
       chmod +x add.py
-      ./add.py
-      '''
+      python3 add.py
     }
     }
   }
