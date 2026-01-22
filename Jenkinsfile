@@ -1,18 +1,21 @@
+
 pipeline {
-  agent any
-	stages {
-		stage('Test') {
-     			steps{
-				echo 'Welcome to our first program'
-			}
-		}
-		stage('Addition') {
-			steps { 
-				sh '''
-				python3 add.py
-				'''
-			}
-		}  
-	}
+    agent any
+
+    parameters {
+        string(name: 'A', defaultValue: '10', description: 'First number')
+        string(name: 'B', defaultValue: '20', description: 'Second number')
+    }
+
+    stages {
+        stage('Addition') {
+            steps {
+                script {
+                    def sum = params.A.toInteger() + params.B.toInteger()
+                    echo "Sum = ${sum}"
+                }
+            }
+        }
+    }
 }
 
