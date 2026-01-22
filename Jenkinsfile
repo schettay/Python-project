@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     def sum = params.A.toInteger() + params.B.toInteger()
-                    echo "Sum = ${sum}"
+                    echo "Addition for $A and $B is ${sum}"
                 }
             }
         }
