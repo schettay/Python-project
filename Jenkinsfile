@@ -8,8 +8,8 @@ pipeline {
 		}
 		stage('Addition') {
 			steps {
-				def a=1
-				def b=2
+				a=1
+				b=2
                                 echo $((a+b))
 			}
 		}  
