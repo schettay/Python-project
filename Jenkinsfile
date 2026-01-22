@@ -9,9 +9,7 @@ pipeline {
 		stage('Addition') {
 			steps { 
 				sh '''
-				a=1
-				b=2
-                                echo $((a+b))
+				python3 add.py
 				'''
 			}
 		}  
